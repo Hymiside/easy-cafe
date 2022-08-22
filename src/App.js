@@ -11,9 +11,9 @@ export default function App() {
                 <p className={'header__text'}>Добро пожаловать!</p>
                 <p className={'text'}>Выберите тип входа</p>
 
-                <div className={'buttons first'}><Link to={'/login-employee'}><button>Войти как сотрудник</button></Link></div>
-                <div className={'buttons second'}><Link to={'/login-director'}><button>Войти как директор</button></Link></div>
+                <div className={'button first'}><Link to={'/login-employee'}><button>Войти как сотрудник</button></Link></div>
+                <div className={'button second'}><Link to={'/login-director'}><button>Войти как директор</button></Link></div>
             </div>
         </div>
     );
-}
+};
