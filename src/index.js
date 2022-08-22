@@ -12,5 +12,5 @@ root.render(
             <Route path={'/'} element={<div style={{width: "940px", margin: "auto"}}><App /></div>} />
         </Routes>
     </BrowserRouter>
-)
+);
 
