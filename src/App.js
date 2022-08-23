@@ -1,5 +1,5 @@
 import React from 'react';
-import './App.css';
+import AppStyles from './App.css';
 import {Link} from "react-router-dom";
 
 export default function App() {
@@ -7,7 +7,7 @@ export default function App() {
         <div>
             <div className={'navbar'}><Link to={'/'} className={'logo'}>easy cafe</Link></div>
 
-            <div className={'square'}>
+            <div className={AppStyles.square}>
                 <p className={'header__text'}>Добро пожаловать!</p>
                 <p className={'text'}>Выберите тип входа</p>
 

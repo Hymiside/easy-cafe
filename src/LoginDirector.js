@@ -1,45 +1,46 @@
 import React from "react";
 import {Link} from "react-router-dom";
 
-import "./LoginDirector.css"
+import { ButtonInput, InputLogin, FormLogin, SquareLogin, HeaderText, Text, NavBar } from "./styles/StylesLogin";
 
 
 class LoginDirector extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {value: ''};
+        this.state = {login: '', password: ''};
 
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
     handleChange(event) {
-        this.setState({value: event.target.value});
+        let {name, value} = event.target
+        this.setState({[name]: value});
     }
 
     handleSubmit(event) {
-        alert(this.state.value);
+        alert(this.state.login + ' ' + this.state.password);
         event.preventDefault();
     }
 
     render() {
         return (
             <div>
-                <div className={'navbar'}><Link to={'/'} className={'logo'}>easy cafe</Link></div>
+                <NavBar><Link to={'/'} className={'logo'}>easy cafe</Link></NavBar>
 
-                <div className={'square'}>
-                    <p className={'header__text'}>Добро пожаловать!</p>
-                    <p className={'text'}>Введите данные директора</p>
+                <SquareLogin>
+                    <HeaderText>Добро пожаловать!</HeaderText>
+                    <Text>Введите данные директора</Text>
 
-                    <form onSubmit={this.handleSubmit}>
+                    <FormLogin onSubmit={this.handleSubmit}>
                         <label>
-                            <div className={'first'}><input className={'input'} type="text" placeholder='Логин' value={this.state.value} onChange={this.handleChange} /></div>
-                            <div className={'second'}><input className={'input'} type="password" placeholder='Пароль' value={this.state.value} onChange={this.handleChange} /></div>
+                            <div><InputLogin indent className={'input'} type="text" name="login" placeholder='Логин' value={this.state.login} onChange={this.handleChange} /></div>
+                            <div><InputLogin className={'input'} type="password" name="password" placeholder='Пароль' value={this.state.password} onChange={this.handleChange}/></div>
                         </label>
 
-                        <div className={'button__submit'}><input type="submit" value="Войти" /></div>
-                    </form>
-                </div>
+                        <div><ButtonInput type="submit" value="Войти" /></div>
+                    </FormLogin>
+                </SquareLogin>
             </div>
         );
     }
