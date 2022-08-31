@@ -15,8 +15,28 @@ export const ButtonInput = styled.input `
   color: #FFFFFF;
 `
 
+// Стили логотипа
+export const Logo = styled.p `
+  text-underline: none;
+  text-decoration: none;
+  font-weight: 600;
+  color: #5200FF;
+  font-size: 21px;
+`
+
 //Кнопка для выбора типа входа
 export const ButtonLogin = styled.button `
+  width: 310px;
+  height: 55px;
+  background: #5200FF;
+  border: none;
+  border-radius: 15px;
+  margin: ${props => props.indent ? '40px 0 0 0' : '20px 0 0 0'};
+
+  font-size: 18px;
+  font-weight: 600;
+  font-family: 'Montserrat', sans-serif;
+  color: #FFF;
 `
 
 //Поле для ввода логина и пароля
@@ -43,7 +63,7 @@ export const FormLogin = styled.form `
 // Плашка для входа в приложение
 export const SquareLogin = styled.div `
   width: 600px;
-  height: 475px;
+  height: ${props => props.start ? '390px' : '475px'};
   border-radius: 20px;
   border: 1px solid #E2E2E2;
   background: #F9F9F9;

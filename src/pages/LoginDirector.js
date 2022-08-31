@@ -1,7 +1,7 @@
 import React from "react";
 import {Link} from "react-router-dom";
 
-import { ButtonInput, InputLogin, FormLogin, SquareLogin, HeaderText, Text, NavBar } from "./styles/StylesLogin";
+import { ButtonInput, InputLogin, FormLogin, SquareLogin, HeaderText, Text, NavBar, Logo } from "../styles/StylesLogin";
 
 
 class LoginDirector extends React.Component {
@@ -19,14 +19,16 @@ class LoginDirector extends React.Component {
     }
 
     handleSubmit(event) {
-        alert(this.state.login + ' ' + this.state.password);
+        if (this.state.login === "" || this.state.password === "") {
+            alert("Введите корректные данные")
+        } else { alert(this.state.login + ' ' + this.state.password) }
         event.preventDefault();
     }
 
     render() {
         return (
-            <div>
-                <NavBar><Link to={'/'} className={'logo'}>easy cafe</Link></NavBar>
+            <div style={{fontFamily: "'Montserrat', sans-serif"}}>
+                <NavBar><Link to={'/'}style={{ textDecoration: 'none' }}><Logo>easy cafe</Logo></Link></NavBar>
 
                 <SquareLogin>
                     <HeaderText>Добро пожаловать!</HeaderText>
