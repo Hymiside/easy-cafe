@@ -1,13 +1,14 @@
 import React from "react";
 import {Link} from "react-router-dom";
 
-import { ButtonInput, InputLogin, FormLogin, SquareLogin, HeaderText, Text, NavBar, Logo } from "../styles/StylesLogin";
+import { ButtonInput, InputLogin, FormLogin, HeaderText, Text, NavBar, Logo } from "../styles/StyleLogin";
+
 
 
 class LoginDirector extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {login: '', password: ''};
+        this.state = {login: '', password: '', status: false};
 
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -21,16 +22,18 @@ class LoginDirector extends React.Component {
     handleSubmit(event) {
         if (this.state.login === "" || this.state.password === "") {
             alert("Введите корректные данные")
-        } else { alert(this.state.login + ' ' + this.state.password) }
+        } else {
+            //TODO
+        }
         event.preventDefault();
     }
 
     render() {
         return (
             <div style={{fontFamily: "'Montserrat', sans-serif"}}>
-                <NavBar><Link to={'/'}style={{ textDecoration: 'none' }}><Logo>easy cafe</Logo></Link></NavBar>
+                <NavBar><Link to={'/'} style={{ textDecoration: 'none' }}><Logo>easy cafe</Logo></Link></NavBar>
 
-                <SquareLogin>
+                <div style={{marginTop: "170px"}}>
                     <HeaderText>Добро пожаловать!</HeaderText>
                     <Text>Введите данные сотрудника</Text>
 
@@ -42,7 +45,7 @@ class LoginDirector extends React.Component {
 
                         <div><ButtonInput type="submit" value="Войти" /></div>
                     </FormLogin>
-                </SquareLogin>
+                </div>
             </div>
         );
     }

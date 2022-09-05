@@ -1,7 +1,7 @@
 import React from "react";
-import {Link} from "react-router-dom";
+import { Link } from "react-router-dom";
 
-import { ButtonInput, InputLogin, FormLogin, SquareLogin, HeaderText, Text, NavBar, Logo } from "../styles/StylesLogin";
+import { ButtonInput, InputLogin, FormLogin, HeaderText, Text, NavBar, Logo } from "../styles/StyleLogin";
 
 
 class LoginDirector extends React.Component {
@@ -28,9 +28,9 @@ class LoginDirector extends React.Component {
     render() {
         return (
             <div style={{fontFamily: "'Montserrat', sans-serif"}}>
-                <NavBar><Link to={'/'}style={{ textDecoration: 'none' }}><Logo>easy cafe</Logo></Link></NavBar>
+                <NavBar><Link to={'/'} style={{ textDecoration: 'none' }}><Logo>easy cafe</Logo></Link></NavBar>
 
-                <SquareLogin>
+                <div style={{marginTop: "170px"}}>
                     <HeaderText>Добро пожаловать!</HeaderText>
                     <Text>Введите данные директора</Text>
 
@@ -42,7 +42,7 @@ class LoginDirector extends React.Component {
 
                         <div><ButtonInput type="submit" value="Войти" /></div>
                     </FormLogin>
-                </SquareLogin>
+                </div>
             </div>
         );
     }

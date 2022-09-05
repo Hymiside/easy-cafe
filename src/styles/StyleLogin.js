@@ -22,6 +22,7 @@ export const Logo = styled.p `
   font-weight: 600;
   color: #5200FF;
   font-size: 21px;
+  margin: 0;
 `
 
 //Кнопка для выбора типа входа
@@ -43,7 +44,7 @@ export const ButtonLogin = styled.button `
 export const InputLogin = styled.input `
   width: 310px;
   height: 55px;
-  background: #E2E2E2;
+  background: #F4F4F4;
   border-radius: 15px;
   border: none;
   outline: none;
@@ -51,23 +52,13 @@ export const InputLogin = styled.input `
 
   padding: 0 0 0 30px;
   color: #303030;
-  font-weight: 300;
+  font-weight: 500;
   font-size: 15px;
 `
 
 // Форма для авторизации
 export const FormLogin = styled.form `
   text-align: center;
-`
-
-// Плашка для входа в приложение
-export const SquareLogin = styled.div `
-  width: 600px;
-  height: ${props => props.start ? '390px' : '475px'};
-  border-radius: 20px;
-  border: 1px solid #E2E2E2;
-  background: #F9F9F9;
-  margin: 136px auto auto auto;
 `
 
 // Большой текст на плашке
@@ -89,4 +80,6 @@ export const Text = styled.p `
 // Блок с логотипом
 export const NavBar = styled.div `
   margin: 30px 0 0 0;
+  display: flex;
+  justify-content: space-between;
 `
