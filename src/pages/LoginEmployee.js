@@ -1,5 +1,5 @@
 import React from "react";
-import {Link} from "react-router-dom";
+import {Link, Navigate} from "react-router-dom";
 
 import { ButtonInput, InputLogin, FormLogin, HeaderText, Text, NavBar, Logo } from "../styles/StyleLogin";
 
@@ -20,15 +20,23 @@ class LoginDirector extends React.Component {
     }
 
     handleSubmit(event) {
-        if (this.state.login === "" || this.state.password === "") {
-            alert("Введите корректные данные")
+        if (this.state.login !== '' && this.state.password !== '') {
+            // Отправляем запрос на проверку данных и получаем ответ
+            this.setState({'status': true})
         } else {
-            //TODO
+            alert('Введите корректные данные!')
         }
         event.preventDefault();
     }
 
+
     render() {
+        if (this.state.status) {
+            return (
+                <div><Navigate to="/orders" /></div>
+            );
+        }
+
         return (
             <div style={{fontFamily: "'Montserrat', sans-serif"}}>
                 <NavBar><Link to={'/'} style={{ textDecoration: 'none' }}><Logo>easy cafe</Logo></Link></NavBar>
